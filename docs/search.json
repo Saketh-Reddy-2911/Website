@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "page5.html",
+    "href": "page5.html",
+    "title": "Photo and Text Layout Example",
+    "section": "",
+    "text": "# Left Aligned Text\nThis is the text that will appear on the left side of the page. You can write your content here.\n\n\n&lt;img src=\"\"C:/Users/Saketh Reddy/Downloads/IMG_20230604_234353_319.jpg\"\" alt=\"Image\" width=\"300\"&gt;"
+  },
+  {
+    "objectID": "page3.html",
+    "href": "page3.html",
+    "title": "Professional Experience",
+    "section": "",
+    "text": "Professional Experience\nEuphoria Sponsorship Ambassador, February/2023 – April/2023 Vasavi College of Engineering Hyderabad, Telangana, India • Managed the Euphoria (college event) as Hospitality and Sponsorship head which takes place once a year for which large number of people attend.\nNational Cadet Corps (NCC), July/2017 – May/2019 Indian Military Cadet Corps Hyderabad, Telangana, India • Served as a cadet with basic military training in a twelve-member team through attending various camps by collaborating with other training battalion troops across India and got verbal proficiency in various languages."
+  },
+  {
+    "objectID": "page1.html",
+    "href": "page1.html",
+    "title": "About Me",
+    "section": "",
+    "text": "About Me\nHi myself SAKETH REDDY PUCHAKAYALA mechanical engineer from India currently pursuing Master’s of science in Data Analytics Engineering at George Mason University, fairfax VA. I am from mechanical background but i am so much fascinated towards data related things and i believe that any stream we may consider involves data related aspects in it. That interest made me take this course at graduation level and came all the way leaving my family and friends. Now my ultimate goal is to interlink my mechanical knowledge with the data analytics ideas and come up with my own firm."
+  },
+  {
+    "objectID": "page2.html",
+    "href": "page2.html",
+    "title": "Education",
+    "section": "",
+    "text": "Education\nMechanical Engineer - Vasavi College of Engineering, India. 2023\nHigh school - Kendriya vidyalaya, India. 2019"
+  }
+]
