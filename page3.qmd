@@ -16,7 +16,7 @@ G01486904
 
 Data is visualized in many forms and many ways, there are situations where the visualizations are exploited and shown in the favor of the other person perspectives. Likewise there are visualizations which are good in form but not easy to understand, so for this project here we have chosen a topic "The best college in each state in 2019" here in this visualization the US map is not in exact shape and each state university is separated by circles. So here we took the problem statement and analyzed it and made four perfect graphs for the visualization.
 
-![](images/Screenshot 2024-03-11 133902.png)
+![](images/Screenshot%202024-03-11%20133902.png)
 
 This is the data that is being represented in the map, so as a first step we created a csv file by extracting it from the data provided in the visualization and from there the graphs are built.
 
@@ -119,3 +119,7 @@ plot_ly(data_subset, x = ~RANK, y = ~NAME, type = 'scatter', mode = 'markers') %
 ```
 
 The scatter plot depicts the data of top 10 colleges with their ranks being posted on it and x-axis with the rank number and y-axis with the college name and shows the top college.
+
+# YouTube link
+
+<https://youtu.be/dyW380dsuu0>
