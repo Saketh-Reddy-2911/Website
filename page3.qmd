@@ -2,15 +2,120 @@
 editor: visual
 ---
 
-# Professional Experience
+# MID-PROJECT
 
-**Euphoria Sponsorship Ambassador, February/2023 – April/2023**
-`Vasavi College of Engineering Hyderabad, Telangana, India`
-• Managed the Euphoria (college event) as Hospitality and Sponsorship head which
-takes place once a year for which large number of people attend.
+Saketh Reddy Puchakayala
 
-**National Cadet Corps (NCC), July/2017 – May/2019**
-`Indian Military Cadet Corps Hyderabad, Telangana, India`
-• Served as a cadet with basic military training in a twelve-member team through
-attending various camps by collaborating with other training battalion troops across
-India and got verbal proficiency in various languages.
+G01476856
+
+Varun Tej Mallekedi
+
+G01486904
+
+# Introduction
+
+Data is visualized in many forms and many ways, there are situations where the visualizations are exploited and shown in the favor of the other person perspectives. Likewise there are visualizations which are good in form but not easy to understand, so for this project here we have chosen a topic "The best college in each state in 2019" here in this visualization the US map is not in exact shape and each state university is separated by circles. So here we took the problem statement and analyzed it and made four perfect graphs for the visualization.
+
+![](images/Screenshot 2024-03-11 133902.png)
+
+This is the data that is being represented in the map, so as a first step we created a csv file by extracting it from the data provided in the visualization and from there the graphs are built.
+
+```{r}
+data <- read.csv("D:/Data Analytics/Sem 1/STAT/colleges.csv", header = TRUE)
+word_counts <- table(unlist(strsplit(as.character(data$TYPE), " ")))
+word1 <- "Public"
+word2 <- "Private"
+count_word1 <- word_counts[word1]
+count_word2 <- word_counts[word2]
+comparison <- data.frame(Words = c(word1, word2), Count = c(count_word1, count_word2))
+barplot(comparison$Count,names.arg = comparison$Words,main = "Comparison of Word Counts")
+library(ggplot2)
+ggplot(comparison, aes(x = Words, y = Count, fill = Words)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Ratio between public and private universities", x = "University Type", y = "Number of Universities") +
+  theme_minimal() +theme(legend.title = element_blank())
+
+
+
+```
+
+As in the first step we thought of comparing the number of public universities and private universities, so here we accessed the column university type and counted the number of public and private universities and came up with total number of public and private universities. From there we bar graph and represented the private and public universities side by side on x-axis and number of universities on y-axis and depicted the graph.
+
+```{r}
+library(tidyverse)
+library(maps)
+library(ggrepel)
+library(dplyr)
+library(plotly)
+data <- read.csv("D:/Data Analytics/Sem 1/STAT/CSV COLLEGES .csv", fileEncoding = "ISO-8859-1")
+data$average_early_career_salary <- as.numeric(gsub("\\$", "", gsub(",", "", data$average_early_career_salary)))
+us_map <- map_data("state")
+data <- data %>%
+  rename(region = state) %>%
+  mutate(region = tolower(region))
+map_data <- left_join(us_map, data, by = "region")
+map_data <- map_data %>% 
+  arrange(region)
+gg <- ggplot(data = map_data, aes(x = long, y = lat, group = group, 
+                                  fill = average_early_career_salary,  
+                                  text = paste("State: ", region, 
+                                               "<br>Average Salary: $", average_early_career_salary, 
+                                               "<br>University Name: ", name))) +
+  geom_polygon(color = "#FFFFFF") +
+  geom_text_repel(aes(label = name), size = 3, color = "#121D12", 
+                  box.padding = unit(0.35, "lines"), 
+                  point.padding = unit(0.5, "lines"), 
+                  segment.color = "#FFFFFF") +
+  scale_fill_gradient(name = "Average Salary ($)", low = "lightblue", high = "darkblue", 
+                      na.value = "#55C555", guide = "legend") +  
+  labs(title = "University Wise Average Salary", 
+       subtitle = "Darker colors represent higher average salaries") + 
+  theme_minimal() + 
+  theme(legend.position = "right")
+ggplotly(gg, tooltip = "text")
+```
+
+Since the original data is in the wrong shape of US map we thought of taking the exact map and represent the data. So we accessed maps from the library and used plotly with this we represented each state name, average salary and university name. As we put the curser on the state it represents the data.
+
+```{r}
+library(ggplot2)
+data <- read.csv("D:/Data Analytics/Sem 1/STAT/colleges.csv")
+str(data)
+head(data)
+data_subset <- head(data, 10)
+library(plotly)
+plot_ly(data = data_subset, x = ~NAME, y = ~AVERAGE.EARLY.CAREER.SALARY, type = 'scatter', mode = 'lines') %>%
+  layout(title = "Line Graph (Top 10 Rows)", xaxis = list(title = "College Name"), yaxis = list(title = "Average Early Career Salary"))
+ggplot(data_subset, aes(x = NAME, y = AVERAGE.EARLY.CAREER.SALARY, group = 1)) +
+  geom_line() +
+  labs(title = "Line Graph (Top 10 Rows)", x = "College Name", y = "Average Early Career Salary")
+ggplot(data_subset, aes(x = NAME, y = AVERAGE.EARLY.CAREER.SALARY, group = 1)) +
+  geom_line() +
+  labs(title = "Average pay after graduation", x = "College Name", y = "Average Early Career Salary") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+
+The second graph represents the data of all states, universities and their average pay in the map. So for the third graph we created a subset of top 10 colleges and their pay with the line graph and represented college name on x-axis and average early carrier salary on y-axis. It shows that Stanford university students gets high pay compared to rest other.
+
+```{r}
+# Load the required library
+library(plotly)
+
+# Step 1: Read the CSV file
+data <- read.csv("D:/Data Analytics/Sem 1/STAT/colleges.csv")
+
+# Step 2: Check the structure and content of your data
+str(data)
+head(data)
+
+# Step 3: Subset your data to include only the first 10 rows
+data_subset <- head(data, 10)
+
+# Step 4: Create a scatter plot using Plotly
+plot_ly(data_subset, x = ~RANK, y = ~NAME, type = 'scatter', mode = 'markers') %>%
+  layout(title = "Scatter Plot of top 10 colleges", xaxis = list(title = "X Axis Label"), yaxis = list(title = "Y Axis Label"))
+
+```
+
+The scatter plot depicts the data of top 10 colleges with their ranks being posted on it and x-axis with the rank number and y-axis with the college name and shows the top college.

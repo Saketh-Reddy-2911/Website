@@ -9,7 +9,7 @@ website:
         href: page1.qmd
       - text: "Education"
         href: page2.qmd
-      - text: "Professional Experience"
+      - text: "MID-PROJECT"
         href: page3.qmd
       - text: "Career Goals"
         href: page4.qmd
