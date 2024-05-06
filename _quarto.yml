@@ -1,27 +1,30 @@
-project: 
+project:
   type: website
-  output-dir: docs
-
-website: 
-  navbar:
-    left: 
-      - text: "About me"
-        href: page1.qmd
-      - text: "Education"
-        href: page2.qmd
-      - text: "MID-PROJECT"
-        href: page3.qmd
-      - text: "Career Goals"
-        href: page4.qmd
-
-
-format: 
-  html: 
-    theme:
-      dark: darkly
-      light: flatly 
-      
-      
-    
+  title: "Final Project"
   
-  
+website:
+  sidebar:
+    style: "docked"
+    search: false
+    contents:
+      - section: "Introduction"
+        contents:
+          - index.qmd
+          - research.qmd
+      - section: "2. Research"
+        contents:
+          - question1.qmd
+          - question2.qmd
+          - question3.qmd
+      - section: "3. Group Members"
+        contents:
+          - bhuvan.qmd
+          - saketh.qmd
+          - varun.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+editor: visual
+

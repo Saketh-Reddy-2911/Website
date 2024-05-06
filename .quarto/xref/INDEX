@@ -1,17 +1,32 @@
 {
-  "page1.qmd": {
-    "page1.html": "6a403438"
+  "index.qmd": {
+    "index.html": "d64b230a"
   },
-  "page2.qmd": {
-    "page2.html": "4fa5f6bf"
+  "about.qmd": {
+    "about.html": "f6b5bc4e"
   },
-  "page3.qmd": {
-    "page3.html": "2498755c"
+  "research.qmd": {
+    "research.html": "d73ef513"
   },
-  "page4.qmd": {
-    "page4.html": "570ad3e5"
+  "Teammates.qmd": {
+    "Teammates.html": "ee2c6302"
   },
-  "page5.qmd": {
-    "page5.html": "2a17bb61"
+  "bhuvan.qmd": {
+    "bhuvan.html": "404c0133"
+  },
+  "saketh.qmd": {
+    "saketh.html": "86ae0e9f"
+  },
+  "varun.qmd": {
+    "varun.html": "25300271"
+  },
+  "question1.qmd": {
+    "question1.html": "5a5eba6d"
+  },
+  "question2.qmd": {
+    "question2.html": "60a27e97"
+  },
+  "question3.qmd": {
+    "question3.html": "912e2a84"
   }
 }

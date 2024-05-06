@@ -1,0 +1,12 @@
+name: Final-Project
+title: Final-Project
+username: projecttt
+account: projecttt
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11935328
+bundleId: 8576598
+url: https://projecttt.shinyapps.io/Final-Project/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
